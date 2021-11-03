@@ -1,0 +1,77 @@
+html {
+    width: 100%;
+    height: 100%;
+    background: #222455;
+
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            .light {
+                width: 80%;
+                height: 85%;
+                background: #fcff12;
+                background: linear-gradient(to bottom,#fcff12 0%,transparent 100%);
+                clip-path: polygon(49% 0, 50% 0, 100% 100%, 0% 100%);
+                animation: lightOn 2s ease-out 0s;
+                position: relative;
+
+                div {
+                    position: absolute;
+                    width: 80px;
+                    height: 80px;
+                    background: url('../images/frog.png') no-repeat;
+                    background-size: 100%;
+                    animation: jump3 10s linear 7s;
+                }
+            }
+
+            .forg {
+                opacity: 0;
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                background: url('../images/frog.png') no-repeat;
+                background-size: 100%;
+                animation: jump1 2s linear 3s,jump2 2s linear 5s;
+            }
+
+            .wordBox {
+                position: absolute;
+                width: auto;
+                height: auto;
+                top: 50%;
+                transform: translateY(-50%);
+
+                p {
+                    display: inline-block;
+                    font-size: 120px;
+                    font-weight: bold;
+                    padding: 0px 20px;
+                    transform-origin: bottom;
+                    animation: stop 7.8s linear 0s,wordJump 1s linear 7.8s;
+
+                    &:nth-of-type(1) {
+                        animation: stop 7.8s linear 0s,wordJump 1s linear 7.8s,singleWordJump3 5s linear 8.8s;
+                    }
+
+                    &:nth-of-type(2) {
+                        animation: stop 7.8s linear 0s,wordJump 1s linear 7.8s,singleWordJump1 2s linear 8.8s;
+                    }
+
+                    &:nth-of-type(3) {
+                        animation: stop 7.8s linear 0s,wordJump 1s linear 7.8s,singleWordJump2 3s linear 8.8s;
+                    }
+                }
+            }
+        }
+    }
+}
